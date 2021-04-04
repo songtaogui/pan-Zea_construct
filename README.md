@@ -1,7 +1,23 @@
-[TOC]
-
 # Pan-*Zea* genome construction pipelines
-[![GitHub Downloads](https://img.shields.io/github/downloads/songtaogui/pan-Zea-genome-pipe/total.svg?style=social&logo=github&label=Download)](https://github.com/songtaogui/pan-Zea-genome-pipe)
+
+- [Pan-*Zea* genome construction pipelines](#pan-zea-genome-construction-pipelines)
+  - [Introduction](#introduction)
+  - [Installation](#installation)
+    - [Prerequisites](#prerequisites)
+    - [Executing](#executing)
+  - [General steps](#general-steps)
+  - [Quick Start](#quick-start)
+    - [1. Preparing inputs](#1-preparing-inputs)
+    - [2. Preparing databases for decontamination](#2-preparing-databases-for-decontamination)
+    - [3. Individually assembling, NR-SEQ identifying and anchoring](#3-individually-assembling-nr-seq-identifying-and-anchoring)
+    - [4. Merging population level NR-SEQ anchor information, clustering and removing redundancy](#4-merging-population-level-nr-seq-anchor-information-clustering-and-removing-redundancy)
+  - [Detailed usage](#detailed-usage)
+    - [PANZ_individual_pipe.sh](#panz_individual_pipesh)
+      - [usage](#usage)
+    - [PANZ_cluster_pipe.sh](#panz_cluster_pipesh)
+  - [Output formats](#output-formats)
+  - [Citations](#citations)
+
 
 ## Introduction
 
