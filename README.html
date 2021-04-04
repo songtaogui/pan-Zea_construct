@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>README.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<p>[TOC]</p>
+<h1 id="pan-zea-genome-construction-pipelines">Pan-<em>Zea</em> genome construction pipelines</h1>
+<p><a href="https://github.com/songtaogui/pan-Zea-genome-pipe"><img src="https://img.shields.io/github/downloads/songtaogui/pan-Zea-genome-pipe/total.svg?style=social&amp;logo=github&amp;label=Download" alt="GitHub Downloads"></a></p>
+<h2 id="introduction">Introduction</h2>
+<p>Constructing linear representation of pan genome from inputs of:</p>
+<blockquote>
+<ol>
+<li>A reference genome</li>
+<li>population level NGS deep sequencing short reads (&gt; 20X depth of coverage)</li>
+<li>Other reference-level genome assemblies (Optional)</li>
+</ol>
+</blockquote>
+<p>by:</p>
+<blockquote>
+<ol>
+<li><em>de novo</em> assemble each individual from NGS reads</li>
+<li>identifying non-reference sequences(NR-SEQs) from whole genome alignment (WGA) to reference genome</li>
+<li>attempting to anchor them to reference genome from evidences of WGA and WGS pair-end read mapping</li>
+<li>clustering the anchored NR-SEQs and remove redundancies based on population level data to get the representative pan-genome sequences.</li>
+</ol>
+</blockquote>
+<p>you will get outputs of:</p>
+<blockquote>
+<ol>
+<li>each individual's draft contigs</li>
+<li>WGA between each individual and reference</li>
+<li>NR-SEQs for each individual, with relative positions to the reference genome if there are supportive anchoring evidences</li>
+<li>Non-redundant non-reference sequence (NRNR-SEQ) representations of all the individuals</li>
+<li>the linear representation of the pan-genome would be <code>Reference</code> + <code>NRNR-SEQ</code></li>
+</ol>
+</blockquote>
+<p>This pipeline was originally developed to construct the pan-<em>Zea</em> genome. However, all the requirements are assigned from input options, which makes it possible to be extended to any NGS based pan-genome construction with slightly modification to the parameters.</p>
+<h2 id="installation">Installation</h2>
+<h3 id="prerequisites">Prerequisites</h3>
+<p>The pipeline was written with <code>bash</code> and was only tested on Linux platform, we do not guarantee trouble-free running on other platforms.</p>
+<blockquote>
+<p><strong>Runtime environment:</strong></p>
+<ul>
+<li>Linux, tested with version 3.10.0-862.el7.x86_64 (Red Hat 4.8.5-28)</li>
+<li>bash, tested with version 4.2.46(2)-release (x86_64-redhat-linux-gnu)</li>
+<li>perl 5, tested with v5.30.1</li>
+</ul>
+</blockquote>
+<p>These softwares should be installed and available from <code>$PATH</code> environment variable to make sure the pipelines run successfully:</p>
+<ul>
+<li><a href="https://github.com/loneknightpy/idba">idba_ud</a></li>
+<li><a href="https://github.com/ablab/quast">Quast5</a> (tested with v5.0.2)</li>
+<li><a href="https://github.com/shenwei356/seqkit">seqkit</a> (tested with v0.14.0)</li>
+<li><a href="https://github.com/shenwei356/csvtk">csvtk</a> (tested with v0.20.0)</li>
+<li><a href="https://zlib.net/pigz/">pigz</a> (tested with v2.3.1)</li>
+<li><a href="https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/">blastn</a> (tested with v2.9.0)</li>
+<li><a href="https://github.com/lh3/bwa">bwa</a> (tested with v0.7.17-r1188)</li>
+<li><a href="http://www.htslib.org/">samtools</a> (tested with v1.9)</li>
+<li><a href="https://bedtools.readthedocs.io/en/latest/">bedtools</a> (tested with v2.27.1)</li>
+<li><a href="https://bedops.readthedocs.io/en/latest/">bedops</a> (tested with v2.4.35)</li>
+<li><a href="https://jgi.doe.gov/data-and-tools/bbtools/">bbtools: clumpify.sh stats.sh</a> (tested with v38.42)</li>
+<li><a href="https://github.com/bkehr/popins">popins</a> (tested with vdamp_v1-151-g4010f61, and ignoring the velvet program because we used pre-assemblied contigs from idba_ud)</li>
+</ul>
+<h3 id="executing">Executing</h3>
+<p>Once the prerequisites were corrected installed and assigned to <code>$PATH</code>, the pipelines could be executed by:</p>
+<pre class="hljs"><code><div><span class="hljs-comment"># get the usage of the pipelines:</span>
+
+bash /PATH/to/pan-Zea_genome_pipe/PANZ_individual_pipe.sh -h
+
+bash /PATH/to/pan-Zea_genome_pipe/PANZ_cluster_pipe.sh -h
+</div></code></pre>
+<h2 id="general-steps">General steps</h2>
+<p>Figure illustration of the pipeline:
+<img src="https://i.loli.net/2021/04/03/Rrw57anHU3utoJ4.png" alt="pipe"></p>
+<p>The pipeline consists mainly of:</p>
+<blockquote>
+<ol>
+<li>run <strong>assembly</strong> using idba_ud to get genome assembly for each individual</li>
+<li>align each assembly to the reference genome using minimap2 (embedded in quast) and get <strong>primary NR-SEQs</strong></li>
+<li>algin the primary NR-SEQs using blast against <code>NCBI nt database</code> for <strong>decontamination</strong></li>
+<li>align the outputs to reference genome again with <code>bwa MEM</code> and <strong>filter</strong> according to <code>coverage%</code> and <code>identity%</code></li>
+<li>get the split-reads (<strong>SR</strong>) and read-pairs (<strong>RP</strong>) by aligning the WGS paired-end reads of each individual to the reference genome using <code>popins</code> as the anchoring evidences</li>
+<li>combine WGA information with evidences from SR and RP to <strong>anchor</strong> the NR-SEQs to reference genome</li>
+<li><strong>clustering</strong> the anchored NR-SEQs, and get <strong>non-redundant</strong> representations according to population level evidences</li>
+<li>get non-redundant unanchored NR-SEQs, merge with reference sequence and anchored NR-SEQs as the <strong>linear pan-genome</strong>.</li>
+</ol>
+</blockquote>
+<h2 id="quick-start">Quick Start</h2>
+<h3 id="1-preparing-inputs">1. Preparing inputs</h3>
+<p>Let's say we have 150 bp WGS PE reads from one <strong>maize</strong> sample called <strong>TEST001</strong>:</p>
+<pre class="hljs"><code><div><span class="hljs-comment"># TEST001 PE read of 150 bp</span>
+TEST001_rd1.fq.gz
+TEST001_rd2.fq.gz
+</div></code></pre>
+<p>And a reference genome assembly: <code>REF.fa</code></p>
+<p>Firstly, we need to align the short reads of TEST001 to the reference genome using <a href="https://github.com/lh3/bwa">BWA MEM</a>:</p>
+<pre class="hljs"><code><div><span class="hljs-comment"># build reference index for bwa</span>
+bwa index /path/to/REF.fa
+<span class="hljs-comment"># this would generate index files of REF.fa.{amb,ann,bwt,pac,sa}</span>
+<span class="hljs-comment"># <span class="hljs-doctag">NOTE:</span> make sure the indexes are in the same PATH with REF.fa</span>
+
+<span class="hljs-comment"># Now run sequence alignment, and get sorted bam format alignment:</span>
+bwa mem /path/to/REF.fa /path/to/TEST001_rd1.fq.gz /path/to/TEST001_rd2.fq.gz |\
+    samtools view -@ -Shu - |\
+    samtools sort -O bam -o TEST001_bwa_sort.bam -
+</div></code></pre>
+<p><strong>note</strong>: this bam file was used for extracting &quot;poorly-aligned reads&quot; in popins only, using bam flies from other aligner such as Bowie2 would also work. But the BWA index of REF is mandatory.</p>
+<h3 id="2-preparing-databases-for-decontamination">2. Preparing databases for decontamination</h3>
+<p>Considering that TEST001 is a plant sample, we would like to search the result contigs against the NCBI nt database to remove &quot;best-hit-not-plant&quot; records. To achieve this, we need a local nt database, and a list of plant accessions within the database.</p>
+<ul>
+<li>Get local nt database:</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-comment"># download nt database from NCBI</span>
+<span class="hljs-comment"># NOT run:</span>
+<span class="hljs-comment"># wget https://ftp.ncbi.nih.gov/blast/db/FASTA/nt.gz</span>
+<span class="hljs-comment"># gunzip nt.gz</span>
+</div></code></pre>
+<ul>
+<li>Get all plant accessions within nt db:</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-comment"># 1. parse nt db to get [Gi_access] -&gt; [Taxonomy_id] relationship:</span>
+blastdbcmd -db nt -entry all -outfmt <span class="hljs-string">"%g,%l,%T"</span> &gt; nt_all_accession_length_taxid.csv
+
+<span class="hljs-comment"># 2. get all Taxonomy IDs belonging to Viridiplantae (33090)</span>
+<span class="hljs-comment">#    using TaxonKit: https://github.com/shenwei356/taxonkit</span>
+taxonkit list --ids 33090 --indent <span class="hljs-string">""</span> &gt; plant.taxid.txt
+
+<span class="hljs-comment"># 3. get all plant accessions:</span>
+cat nt_all_accession_length_taxid.csv |\
+perl -F<span class="hljs-string">","</span> -lane <span class="hljs-string">'
+    BEGIN{
+        open(IN,"plant.taxid.txt");
+        while(&lt;IN&gt;){
+            chomp;
+            $h{$_}=1;
+        }
+        $,="\t";
+    }
+    $a=join(",",@F[0..$#F-2]);
+    print $a if $h{$F[-1]};
+'</span> &gt; plant_nt_accession.txt
+
+</div></code></pre>
+<h3 id="3-individually-assembling-nr-seq-identifying-and-anchoring">3. Individually assembling, NR-SEQ identifying and anchoring</h3>
+<p>Now we have everything needed as inputs:</p>
+<pre class="hljs"><code><div><span class="hljs-comment"># &gt;&gt; In bash:</span>
+<span class="hljs-comment"># inputs</span>
+<span class="hljs-built_in">export</span> rd1 = <span class="hljs-string">"/path/to/TEST001_rd1.fq.gz"</span>
+<span class="hljs-built_in">export</span> rd2 = <span class="hljs-string">"/path/to/TEST001_rd2.fq.gz"</span>
+<span class="hljs-built_in">export</span> ref = <span class="hljs-string">"/path/to/REF.fa"</span>  <span class="hljs-comment"># bwa indexed</span>
+<span class="hljs-built_in">export</span> sr_bam=<span class="hljs-string">"/path/to/TEST001_bwa_sort.bam"</span>
+<span class="hljs-comment"># dbs</span>
+<span class="hljs-built_in">export</span> nt_db= <span class="hljs-string">"/path/to/nt_db/nt"</span>
+<span class="hljs-built_in">export</span> pl_acc= <span class="hljs-string">"/path/to/plant_nt_accession.txt"</span>
+</div></code></pre>
+<p>And we could simply run the pipeline as:</p>
+<pre class="hljs"><code><div><span class="hljs-comment"># run pipeline for TEST001:</span>
+bash /path/to/PANZ_individual_pipe.sh -1 <span class="hljs-variable">${rd1}</span> -2 <span class="hljs-variable">${rd2}</span> -g 500 -t 8 -X TEST001 -R <span class="hljs-variable">${ref}</span> -l 100 -D <span class="hljs-variable">${nt_db}</span> -P <span class="hljs-variable">${pl_acc}</span> -N 0.4 -c 0.8 -i 0.9 -B <span class="hljs-variable">${sr_bam}</span> -l 150 -q 10 -A 3 -S 3
+</div></code></pre>
+<p>This command would automatically do:</p>
+<blockquote>
+<ol>
+<li>assembly TEST001 draft contigs from WGS reads</li>
+<li>filter out too short contigs (&lt; 500 bp), then align the remaining contigs to reference genome to get the raw NR-SEQs (kept sequences with unaligned length &gt; 100 bp)</li>
+<li>decontaminating raw NR-SEQs with proportion of not-plant-sequences &gt;= 40%</li>
+<li>align NR-SEQs to reference again with BWA, filter out record with identify &gt;= 90% and coverage &gt;= 80%</li>
+<li>parse the poorly-mapped-to-reference PE reads of TEST001</li>
+<li>map these reads to reference to get RP and SR evidences (supported by at least 3 RP and SR hits) for anchoring</li>
+<li>get the final anchored information for TEST001</li>
+</ol>
+</blockquote>
+<p>The outputs are located in a dir named <code>TEST001</code>, with plenty of result files. Here we will introduce the key outputs that used in the downstream pipelines, while the detailed Introduction of the outputs of <code>PANZ_individual_pipe.sh</code> are illustrated in <a href="DEBUG:">Output_format.md</a>.</p>
+<ol>
+<li>
+<p><strong>TEST001.unaligned.pmrcfiltered.fa.gz</strong>: records the final NR-SEQs that passed all the filters. The ID of each sequence is in a format of <code>[PREFIX]_[contigIDs]_[start]-[end]</code>, e.g.: TEST001_scaftig0000000113_scaffold_112_32176-33759</p>
+</li>
+<li>
+<p><strong>TEST001_00_FINAL_ALL.vcf</strong>: records all the <strong>anchored</strong> NR-SEQs as INS in vcf format. The quality tag <code>LowQual</code> means &quot;supported with Read-pair evidence, but no precise position evidences (SR or WGA)&quot;, while <code>PASS</code> means with evidences indicate the precise anchor positions and passed the filters.</p>
+</li>
+<li>
+<p><strong>TEST001_05_FINAL_UNANCHORED.tsv</strong>: records all the <strong>un-anchored</strong> NR-SEQs either due to no anchoring evidences or evidences not strong enough to pass the cutoffs.</p>
+</li>
+</ol>
+<h3 id="4-merging-population-level-nr-seq-anchor-information-clustering-and-removing-redundancy">4. Merging population level NR-SEQ anchor information, clustering and removing redundancy</h3>
+<p>Now, let's say we have already finished <code>PANZ_individual_pipe.sh</code> for WGS reads of another 99 samples <strong>TEST002 - TEST100</strong>. So we now have 100 result dirs:</p>
+<pre class="hljs"><code><div><span class="hljs-comment"># &gt; ls -1</span>
+TEST001/
+TEST002/
+...
+...
+TEST099/
+TEST100/
+</div></code></pre>
+<p>We will need to list all the required NR-SEQ outputs of the 100 samples as the downstream inputs:</p>
+<pre class="hljs"><code><div><span class="hljs-comment"># list all NR-SEQs</span>
+ls /path/to/100SampleOuts/TEST{001..100}/*.unaligned.pmrcfiltered.fa.gz &gt; pop_nrseq_list.txt
+
+<span class="hljs-comment"># list all anchored info</span>
+ls /path/to/100SampleOuts/TEST{001..100}/*_00_FINAL_ALL.vcf &gt; pop_anchor_list.txt
+
+<span class="hljs-comment"># list all un-anchored info</span>
+ls /path/to/100SampleOuts/TEST{001..100}/*_05_FINAL_UNANCHORED.tsv &gt; pop_unanchor_list.txt
+
+</div></code></pre>
+<h2 id="detailed-usage">Detailed usage</h2>
+<h3 id="panzindividualpipesh">PANZ_individual_pipe.sh</h3>
+<h4 id="usage">usage</h4>
+<p><strong>STEP1-6</strong> are embedded in <code>PANZ_individual_pipe.sh</code>, with options:</p>
+<pre class="hljs"><code><div>----------------------------------------------------------------------------------------
+         PANZ_individual_pipe.sh -- identify and anchor non-ref-sequences
+----------------------------------------------------------------------------------------
+<span class="hljs-meta">#</span><span class="bash"> parameters ([R]: Required; [O]: Optional)</span>
+
+-h                         show help and exit.
+
+-1 &lt;file&gt;    [O]    File path of PE_reads_1.fq.gz, coupled with '-2'
+-2 &lt;file&gt;    [O]    File path of PE_reads_2.fq.gz, coupled with '-1'
+-g &lt;int&gt;     [O]    cutoff length for final assembly scaftigs (Default:500).
+-t &lt;int&gt;     [O]    number of threads (Default: 4)
+-x &lt;string&gt;  [R]    PREFIX for the sample, used to generate outputs.
+-f &lt;file&gt;    [O]    File path of scaftig.fa.gz, will ignore -1 -2 and skip
+                           idba_ud assembly step. If there is properate scaftig
+                           file (Named as: Prefix_scaftig\$scftig_len.fa.gz, eg:
+                           Sample1_scaftig500.fa.gz), the program will use that
+                           file instead of -f scaftig file for downstream analysis.
+                           (NOTE: sequence name of the scaftig file should start
+                           with 'PREFIX_', same as -x PREFIX )
+-R &lt;file&gt;    [R]    File path of reference.fa, should have bwa indexed.
+-l &lt;int&gt;     [O]    min length for extract unaligned sequences (Default: 100)
+-D &lt;file&gt;    [R]    Path of blastDB for cleaning. Use NCBI NT databse.
+-P &lt;file&gt;    [R]    Path of list of 'within ids' in the blastDB, one record
+                           per line.(eg.: if your species is plant, list all plant
+                           ids in the blastDB. )
+-N &lt;0-1&gt;     [O]    Cleaning scaftig cutoff. Filter out scaftigs with Non-
+                           withinSP-seq-length-rate &gt; this value. (Default: 0.4)
+-c &lt;0-1&gt;     [O]    coverage cutoff for filtering unaln sequence (Default: 0.8)
+-i &lt;0-1&gt;     [O]    identity cutoff for filtering unaln sequence (Default: 0.9)
+-B &lt;file&gt;    [R]    File path of all-reads-align-to-ref-raw.bam, used to get
+                           poorly mapped reads in PopIns.
+-L &lt;int&gt;     [O]    Input WGS reads length (Default: 150)
+-q &lt;int&gt;     [O]    map Quality cutoff for bam based filtering (Default: 10)
+-A &lt;int&gt;     [O]    read-pairs support cutoff (Default: 3)
+-S &lt;int&gt;     [O]    split-reads support cutoff (Default: 3)
+-z &lt;path&gt;    [O]    Path of the sub-scripts dir. (Default: $(dirname $0)/src)
+----------------------------------------------------------------------------------------
+
+</div></code></pre>
+<p><strong>NOTEs:</strong></p>
+<ol>
+<li>The input files should be with <strong>absolute paths</strong>; eg. use &quot;/home/data/read.fastq.gz&quot; rather than &quot;./read.fastq.gz&quot;</li>
+<li>If the user-defined scaftigs.fa.gz were assigned through <code>-f</code> option, the <code>-1 / -2</code> options would be ignored and the <em>de novo</em> assembling step would be skipped</li>
+<li>The idba_ud assembly parameters were <strong>hard-coded</strong> in line 44 of <code>/src/pan00_IDBA_assembly.sh</code> as <code>--mink 20 --maxk 100 --step 20</code>. So if you want to change the assembly parameters, you would have to modify the code line manually. We were sorry for that inconvenience, and would consider to make them optional in the future.</li>
+</ol>
+<h3 id="panzclusterpipesh">PANZ_cluster_pipe.sh</h3>
+<h2 id="citations">Citations</h2>
+<p>If you use this pipeline in your work, or you would like to know more details, please refer to:</p>
+<blockquote>
+<p>Gui, S. (2021). TITLE HERE.
+<em>Journal HERE</em>, <strong>34</strong>:3094-3100.- [doi:DOIhere][doi]</p>
+</blockquote>
+
+</body>
+</html>
