@@ -353,5 +353,7 @@ OPTIONS: (R:required  O:optional)
 
 If you use this pipeline in your work, or you would like to know more details, please refer to:
 
+<!--
 > Gui, S. (2021). TITLE HERE.
 > *Journal HERE*, **34**:3094-3100.- [doi:DOIhere][doi]
+-->
