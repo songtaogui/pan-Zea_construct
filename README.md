@@ -347,7 +347,7 @@ OPTIONS: (R:required  O:optional)
 
 ## Output formats
 
-
+<!-- TODO: add output formats intro here -->
 
 ## Citations
 
