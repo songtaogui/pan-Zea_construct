@@ -87,8 +87,7 @@ bash /PATH/to/pan-Zea_genome_pipe/PANZ_cluster_pipe.sh -h
 
 Figure illustration of the pipeline:
 
-![anchoring_pipe](https://raw.githubusercontent.com/songtaogui/imgbed/master/D%3A%5CWorks%5C77_MyGit%5Cimgbedanchoring_pipe.png)
-
+![POWERPNT_2021-04-05_13-30-03](https://raw.githubusercontent.com/songtaogui/imgbed/master/D%3A%5CWorks%5C77_MyGit%5CimgbedPOWERPNT_2021-04-05_13-30-03.png)
 
 The pipeline consists mainly of:
 >1. run **assembly** using idba_ud to get genome assembly for each individual
