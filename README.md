@@ -1,23 +1,6 @@
 # Pan-*Zea* genome construction pipelines
 
-- [Pan-*Zea* genome construction pipelines](#pan-zea-genome-construction-pipelines)
-  - [Introduction](#introduction)
-  - [Installation](#installation)
-    - [Prerequisites](#prerequisites)
-    - [Executing](#executing)
-  - [General steps](#general-steps)
-  - [Quick Start](#quick-start)
-    - [1. Preparing inputs](#1-preparing-inputs)
-    - [2. Preparing databases for decontamination](#2-preparing-databases-for-decontamination)
-    - [3. Individually assembling, NR-SEQ identifying and anchoring](#3-individually-assembling-nr-seq-identifying-and-anchoring)
-    - [4. Merging population level NR-SEQ anchor information, clustering and removing redundancy](#4-merging-population-level-nr-seq-anchor-information-clustering-and-removing-redundancy)
-  - [Detailed usage](#detailed-usage)
-    - [PANZ_individual_pipe.sh](#panz_individual_pipesh)
-      - [usage](#usage)
-    - [PANZ_cluster_pipe.sh](#panz_cluster_pipesh)
-  - [Output formats](#output-formats)
-  - [Citations](#citations)
-
+[![DOI](https://zenodo.org/badge/354499874.svg)](https://zenodo.org/badge/latestdoi/354499874)
 
 ## Introduction
 
@@ -43,6 +26,25 @@ you will get outputs of:
 >5. the linear representation of the pan-genome would be `Reference` + `NRNR-SEQ`
 
 This pipeline was originally developed to construct the pan-*Zea* genome. However, all the requirements are assigned from input options, which makes it possible to be extended to any NGS based pan-genome construction with slightly modification to the parameters.
+
+
+- [Pan-*Zea* genome construction pipelines](#pan-zea-genome-construction-pipelines)
+  - [Introduction](#introduction)
+  - [Installation](#installation)
+    - [Prerequisites](#prerequisites)
+    - [Executing](#executing)
+  - [General steps](#general-steps)
+  - [Quick Start](#quick-start)
+    - [1. Preparing inputs](#1-preparing-inputs)
+    - [2. Preparing databases for decontamination](#2-preparing-databases-for-decontamination)
+    - [3. Individually assembling, NR-SEQ identifying and anchoring](#3-individually-assembling-nr-seq-identifying-and-anchoring)
+    - [4. Merging population level NR-SEQ anchor information, clustering and removing redundancy](#4-merging-population-level-nr-seq-anchor-information-clustering-and-removing-redundancy)
+  - [Detailed usage](#detailed-usage)
+    - [PANZ_individual_pipe.sh](#panz_individual_pipesh)
+      - [usage](#usage)
+    - [PANZ_cluster_pipe.sh](#panz_cluster_pipesh)
+  - [Output formats](#output-formats)
+  - [Citations](#citations)
 
 ## Installation
 
