@@ -255,10 +255,12 @@ this pipeline would automatically do:
 > 6. map the remaining un anchored sequences to each other to get the non-redundant representation of un-anchored NR-SEQs
 > 7. combining the non-redundant NR-SEQs and the reference genome, as the representation of pan-genome
 
-main output:
+
 
 <!-- 
 TODO: add cls file formats
+
+main output:
 
 **OUT1**: blabla
 **OUT2**: blabla -->
@@ -346,14 +348,16 @@ OPTIONS: (R:required  O:optional)
 
 <!-- NOTE: add note to use cls pipe-->
 
-
-## Output formats
+<!-- ## Output formats -->
 
 <!-- TODO: add output formats intro here -->
+
 
 ## Citations
 
 If you use this pipeline in your work, or you would like to know more details, please refer to:
+
+Gui, S., Wei, W., Jiang, C. et al. [A pan-Zea genome map for enhancing maize improvement](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-022-02742-7). Genome Biol 23, 178 (2022). https://doi.org/10.1186/s13059-022-02742-7
 
 <!--
 > Gui, S. (2021). TITLE HERE.
