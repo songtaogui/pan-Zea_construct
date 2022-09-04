@@ -75,7 +75,7 @@ These softwares should be installed and available from `$PATH` environment varia
 
 ### Executing
 
-Once the prerequisites were corrected installed and assigned to `$PATH`, the pipelines could be executed by:
+Once the prerequisites were correctly installed and assigned to `$PATH`, the pipelines could be executed by:
 
 ```sh
 # get the usage of the pipelines:
