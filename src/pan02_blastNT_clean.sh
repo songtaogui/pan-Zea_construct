@@ -49,7 +49,7 @@ if [ -s $IN ];then
         echo "${pre}.rmNPlant.ID exist.Skip." >&2
     fi
     # check if rmNPlant.ID-only has 0 records
-    num_rmNPlant=$(cat ${pre}.rmNPlant.ID-only | wc -l)
+    num_rmNPlant=0; [ -s ${pre}.rmNPlant.ID-only ] && num_rnNPlant=$(cat ${pre}.rmNPlant.ID-only | wc -l)
     if [ $num_rmNPlant -gt 0 ];then
         echo "remove best hits not plant seqs: ${pre}.rmNPlant.ID-only" >&2
         cut -f 1 ${pre}.rmNPlant.ID > ${pre}.rmNPlant.ID-only
