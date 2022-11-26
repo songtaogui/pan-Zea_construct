@@ -148,7 +148,7 @@ Considering that TEST001 is a plant sample, we would like to search the result c
 
 ```sh
 # 1. parse nt db to get [Gi_access] -> [Taxonomy_id] relationship:
-blastdbcmd -db nt -entry all -outfmt "%g,%l,%T" > nt_all_accession_length_taxid.csv
+blastdbcmd -db nt -entry all -outfmt "%a,%l,%T" > nt_all_accession_length_taxid.csv
 
 # 2. get all Taxonomy IDs belonging to Viridiplantae (33090)
 #    using TaxonKit: https://github.com/shenwei356/taxonkit
