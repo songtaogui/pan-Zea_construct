@@ -363,3 +363,7 @@ Gui, S., Wei, W., Jiang, C. et al. [A pan-Zea genome map for enhancing maize imp
 > Gui, S. (2021). TITLE HERE.
 > *Journal HERE*, **34**:3094-3100.- [doi:DOIhere][doi]
 -->
+
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=songtaogui/pan-Zea_construct&type=Date)](https://star-history.com/#songtaogui/pan-Zea_construct&Date)
